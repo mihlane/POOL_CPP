@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 16:11:02 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/05 16:19:23 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/05 17:45:43 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/05 17:51:47 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-class Zombie
+Zombie* Zombie::newZombie( std::string name)
 {
-private:
-        std::string name;
-public:
-        void    announce(void)
-        {
-            std::cout << name: << "BraiiiiiiinnnzzzZ..." << std::endl;
-        }
-};
+    Zombie *z;
+    z = new Zombie;
+    z->name = name;
+    return (z);
+}

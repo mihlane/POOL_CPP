@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 21:46:05 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/05 18:57:06 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/05 17:45:57 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/05 17:55:27 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-int main(int ac, char ** av)
+void randomChump( std::string name )
 {
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-	else
-	{
-		int i = 1;
-		int z ;
-	while (i < ac)
-	{
-		z = 0;
-		while (av[i][z])
-		{
-			char c = toupper(av[i][z]);
-			std::cout << c;
-			z++;
-		}
-		i++;
-	}
-	std::cout << std::endl;
-	}	
+    Zombie z;
+    
+    z.set(name);
+    z.announce();
 }
