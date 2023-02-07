@@ -5,20 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 17:45:29 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/07 14:24:58 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/07 15:20:41 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/07 15:27:29 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int main()
 {
-    Zombie s;
-    Zombie p("po");
-    Zombie *h;
-    h = newZombie("ddhd");
-    s.set("habibi");
-    s.announce();
-    delete h;
+    std::string h = "HI THIS IS BRAIN";
+    std::string *stringPTR = &h;
+    std::string &stringREF = h;
+    
+    std::cout << &h << std::endl;
+    std::cout << stringPTR <<std::endl;
+     std::cout << &stringREF << std::endl;
+
+     std::cout << h << std::endl;
+    std::cout << *stringPTR <<std::endl;
+     std::cout << stringREF << std::endl;
+    
 }

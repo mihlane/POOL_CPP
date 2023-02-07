@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 17:45:29 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/07 14:24:58 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/07 15:30:20 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/07 15:38:16 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-int main()
+class Weapon
 {
-    Zombie s;
-    Zombie p("po");
-    Zombie *h;
-    h = newZombie("ddhd");
-    s.set("habibi");
-    s.announce();
-    delete h;
+private:
+    std::string type;
+public:
+    getType();
+    setType();
+    Weapon(/* args */);
+    ~Weapon();
+};
+
+Weapon::Weapon(/* args */)
+{
+}
+
+Weapon::~Weapon()
+{
 }

@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 16:11:02 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/07 14:22:24 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/07 15:05:47 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ public:
         }
         ~Zombie();
 };
-Zombie* newZombie( std::string name);
-void randomChump( std::string name);
+Zombie* zombieHorde( int N, std::string name);
 
 #endif

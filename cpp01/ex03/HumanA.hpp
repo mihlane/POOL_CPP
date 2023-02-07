@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 17:45:29 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/07 14:24:58 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/07 15:30:09 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/07 15:40:13 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-int main()
+class HumanA
 {
-    Zombie s;
-    Zombie p("po");
-    Zombie *h;
-    h = newZombie("ddhd");
-    s.set("habibi");
-    s.announce();
-    delete h;
+private:
+    std::string name;
+    int weapon;
+public:
+    HumanA(/* args */);
+    ~HumanA();
+};
+
+HumanA::HumanA(/* args */)
+{
+}
+
+HumanA::~HumanA()
+{
 }

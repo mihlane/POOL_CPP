@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 17:45:20 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/07 14:22:31 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/07 14:57:44 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/07 15:16:30 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie* zombieHorde( int N, std::string name )
 {
-        std::cout << "Constructor called with value " << name << std::endl;
-}
-
-Zombie::Zombie(std::string str) : name(str)
-{
-    std::cout << "Construcor called with value " << name << std::endl;
-}
-
-void    Zombie::announce(void)
-{
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-Zombie::~Zombie()
-{
-        std::cout << "destructor called with value " << name << std::endl;
+    Zombie *z = new Zombie[N];
+    while (N--)
+    {
+        z[N].set(name);
+        
+    }
+    return (z);
 }

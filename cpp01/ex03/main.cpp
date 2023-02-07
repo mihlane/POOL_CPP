@@ -5,20 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 17:45:29 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/07 14:24:58 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/07 15:30:15 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/07 15:44:26 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
 int main()
 {
-    Zombie s;
-    Zombie p("po");
-    Zombie *h;
-    h = newZombie("ddhd");
-    s.set("habibi");
-    s.announce();
-    delete h;
+{
+    Weapon club = Weapon("crude spiked club");
+    HumanA bob("Bob", club);
+    bob.attack();
+    club.setType("some other type of club");
+    bob.attack();
+}
+{
+    Weapon club = Weapon("crude spiked club");
+    HumanB jim("Jim");
+    jim.setWeapon(club);
+    jim.attack();
+    club.setType("some other type of club");
+    jim.attack();
+}
 }
