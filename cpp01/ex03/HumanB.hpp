@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhabibi- < mhabibi-@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:30:13 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/08 14:53:55 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/09 23:40:34 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,36 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-class HumanB::Weapon
+class HumanB
 {
 private:
     std::string name;
-    int weapon;
+    Weapon &Human_b;
 public:
-    HumanB(/* args */);
-    ~HumanB();
-    void    setWeapon(class Weapon)
+    HumanB(std::string str)
     {
-            
+        name = str;
+    }
+    ~HumanB()
+    {
+        std::cout << "Destructor HumanB\n";
+    }
+    void    setWeapon(Weapon &w) : HumanB(w)
+    {
+            this->Human_b = w;
+    }
+     void    attack()
+    {
+        std::cout << name << " attacked with " << Human_b.getType() << std::endl;
     }
 };
 
-HumanB::HumanB(/* args */)
-{
-}
+// HumanB::HumanB(/* args */)
+// {
+// }
 
-HumanB::~HumanB()
-{
-}
+// HumanB::~HumanB()
+// {
+// }
 
 #endif

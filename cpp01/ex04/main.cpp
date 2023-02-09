@@ -5,31 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 15:30:15 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/09 23:30:14 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/10 00:39:26 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/10 00:40:20 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include <iostream>
 
-int main()
+int main(int ac , char **av)
 {
-{
-    Weapon club = Weapon("crude spiked club");
-    HumanA bob("Bob", club);
-    bob.attack();
-    club.setType("some other type of club");
-    bob.attack();
+    std::string s1;
+    std::string s2;
+
+    if (ac == 4)
+    {
+        
+    }
 }
-{
-    Weapon club = Weapon("crude spiked club");
-    HumanB jim("Jim");
-    jim.setWeapon(club);
-    jim.attack();
-    club.setType("some other type of club");
-    jim.attack();
-}
-}
- 
