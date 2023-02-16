@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:26:34 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/16 00:13:17 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:48:49 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ public:
     Fixed& operator=(Fixed const &lp){
         
         std::cout << "copy assigment operator Called\n";
-        this->value = ;
+        this->value = lp.getRawBits();
         
         return *this;
     }
@@ -53,13 +53,18 @@ public:
     {
         std::cout << "Destructor Called\n";
     }
+    int getRawBits(void) const
+    {
+        std::cout << "getRawBits member function called\n";
+        return(value);
+    }
     float   tofloat(void) const
     {
-        return ((float) (value / (1 << 8)));
+        return ((float) (value / (1 << fract_bit)));
     }
     int toInt(void)const
     {
-        
+        return ( (value / (1 >> fract_bit)));
     }
 };
 
