@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:26:34 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/17 21:25:07 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/17 21:32:59 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ public:
     Fixed& operator=(Fixed const &lp){
         
         std::cout << "copy assigment operator Called\n";
-        this->value = lp.getRawBits();
+        this->value = lp.value;
         
         return *this;
     }
@@ -64,16 +64,35 @@ public:
         // std::cout << "getRawBits member function called\n";
         return(value);
     }
-    float   tofloat(void) const
-    {
-        return ((float) (value / (1 << fract_bit)));
-    }
-    int toInt(void)const
-    {
-        int i = (this->value  >> fract_bit);
-        // std::cout << i << std::endl;
-        return ( i);
-    }
+
+
+    int 	toInt( void ) const
+{
+	int int2float;
+
+	int2float = value >> fract_bit;
+	return (int2float);
+}
+
+// Converting its internal representation to a floating-point number
+
+float	tofloat( void ) const
+{
+	float float2int;
+
+	float2int = (float)value /256;
+	return (float2int);
+}
+    // float   tofloat(void) const
+    // {
+    //     return ((float) (value / (1 << fract_bit)));
+    // }
+    // int toInt(void)const
+    // {
+    //     int i = (this->value  >> fract_bit);
+    //     // std::cout << i << std::endl;
+    //     return ( i);
+    // }
     // std::ostream & operator<<(std::ostream & o , Fixed const &obj)
     // {
     //     o << obj.getRawbits();
