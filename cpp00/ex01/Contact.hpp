@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 00:33:44 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/20 00:33:46 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/20 00:17:17 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/20 00:34:55 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
-#include "Contact.hpp"
+
 #include <iostream>
-class Phonebook
+#include <string>
+class Contact
 {
 private:
-    Contact b[8];
+    std::string first_Name;
+    std::string last_Name;
+    std::string nickname;
+    std::string Darkest_secret;
+    std::string phone_number;
 public:
-    std::string    c_get(int i, int j);
-    void    c_set(int i, int j, std::string data);
+     void set(int n, std::string data);
+    std::string get(int n);
+    
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:30:13 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/09 23:40:34 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:18:16 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,27 @@ class HumanB
 {
 private:
     std::string name;
-    Weapon &Human_b;
+    Weapon *Human_b;
 public:
     HumanB(std::string str)
     {
-        name = str;
+        this->name = str;
     }
     ~HumanB()
     {
         std::cout << "Destructor HumanB\n";
     }
-    void    setWeapon(Weapon &w) : HumanB(w)
+    void    setWeapon(Weapon &w)
     {
-            this->Human_b = w;
+            this->Human_b = &w;
     }
      void    attack()
     {
-        std::cout << name << " attacked with " << Human_b.getType() << std::endl;
+
+        if (Human_b)
+            std::cout << name << " attacked with " << Human_b->getType() << std::endl;
+        else
+            std::cout << name << " has no weapon to attak with" << std::endl;
     }
 };
 

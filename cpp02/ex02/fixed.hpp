@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 14:26:34 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/19 12:56:27 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/19 13:00:58 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/19 21:47:49 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,111 @@ float	tofloat( void ) const
     // {
     //     o << obj.getRawbits();
     //     return (o);
+  Fixed operator++(int) {
+        Fixed temp = *this;
+        value++;
+        return temp;
+    }
+    Fixed operator--(int) {
+        Fixed temp = *this;
+        value--;
+        return temp;
+    }
+    // Fixed operator++(int) {
+    //     Fixed temp = *this;
+    //     value++;
+    //     return temp;
+    // }
+    Fixed operator +(Fixed const &a)
+    {
+        Fixed tmp = *this;
+        tmp.value = this->value + a.value;
+        return (tmp);
+    }
+     Fixed operator -(Fixed const &a)
+    {
+        Fixed tmp = *this;
+        tmp.value = this->value - a.value;
+        return (tmp);
+    }
+    Fixed operator  >(Fixed const &a)
+    {
+       return(this->value > a.value);
+    }
+     Fixed operator  <(Fixed const &a)
+    {
+       return(this->value < a.value);
+    }
+     Fixed operator  >=(Fixed const &a)
+    {
+       return(this->value >= a.value);
+    }
+     Fixed operator  <=(Fixed const &a)
+    {
+       return(this->value <= a.value);
+    }
+     Fixed operator  ==(Fixed const &a)
+    {
+       return(this->value == a.value);
+    }
+     Fixed operator  !=(Fixed const &a)
+    {
+       return(this->value != a.value);
+    }
+       Fixed operator *(Fixed const &a)
+    {
+        Fixed tmp = *this;
+        tmp.value = this->value * a.value;
+        return (tmp);
+    }
+       Fixed operator /(Fixed const &a)
+    {
+        Fixed tmp = *this;
+        tmp.value = this->value / a.value;
+        return (tmp);
+    }
+     Fixed& operator++() {
+        ++value;
+        return *this;
+    } Fixed& operator--() {
+        --value;
+        return *this;
+    }
+    static Fixed & min(Fixed  &a, Fixed &b)
+    {
+        if (b.value > a.value)
+            return (a);
+        return(b);
+    }
+    static Fixed & max(Fixed  &a, Fixed &b)
+    {
+        if (b.value < a.value)
+            return (a);
+        return(b);
+    }
+    static Fixed const & min(Fixed const  &a, Fixed const  &b)
+    {
+        if (b.value > a.value)
+            return (a);
+        return(b);
+    }
+    static Fixed const & max(Fixed const  &a, Fixed const  &b)
+    {
+        if (b.value < a.value)
+            return (a);
+        return(b);
+    }
+    // const int min(Fixed const &a)
+    // {
+    //     if (this->value > a.value)
+    //         return (a.value);
+    //     return(this->value);
+    // }
     // }
 };
-    std::ostream & operator<<(std::ostream & o, Fixed const & rhs){
+    std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
+{
 	o << rhs.getRawBits();
 	return o;
 }
-
 #endif

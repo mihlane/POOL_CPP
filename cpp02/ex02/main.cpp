@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 00:33:44 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/20 00:33:46 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/19 13:01:00 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/19 22:01:14 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-
-#include "Contact.hpp"
 #include <iostream>
-class Phonebook
-{
-private:
-    Contact b[8];
-public:
-    std::string    c_get(int i, int j);
-    void    c_set(int i, int j, std::string data);
-};
+#include "fixed.hpp"
 
-#endif
+int main( void ) {
+Fixed  a;
+// Fixed b;
+// b++;
+Fixed const b( Fixed( 5.05f ) + Fixed( 2 ) );
+std::cout << b << std::endl;
+std::cout << ++a << std::endl;
+std::cout << a << std::endl;
+std::cout << a++ << std::endl;
+std::cout << a << std::endl;
+std::cout << --a << std::endl;
+// std::cout << a+b << std::endl;
+std::cout << Fixed::max( a, b ) << std::endl;
+return 0;
+}
