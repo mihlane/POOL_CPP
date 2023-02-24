@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 00:39:26 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/10 19:13:17 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:52:52 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int main(int ac , char **av)
     std::string s1;
     std::string s2;
     std::string str;
-    std::ifstream fd(av[1]);
-    std::ofstream replaced(std::string(av[1]) + ".replaced");
     int index;
     
     if (ac == 4)
     {
+        std::ifstream fd(av[1]);
+        std::ofstream replaced(std::string(av[1]) + ".replaced");
         s1 = av[2];
         s2 = av[3];
         // fd = av[1];
@@ -35,7 +35,7 @@ int main(int ac , char **av)
             while (std::getline(fd, str))
             {
                 index = 0;
-                while ((index = str.find(s1, index)) != std::string::npos)
+                while ((index = str.find(s1, index)) != (int)std::string::npos)
                 {
                     str.erase(index, s1.length());
                     str.insert(index, s2);
@@ -49,4 +49,6 @@ int main(int ac , char **av)
         }
         
     }
+    else
+        std::cout << "try with correct parameters\n";
 }

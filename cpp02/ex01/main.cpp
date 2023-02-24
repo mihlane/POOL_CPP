@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:26:25 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/17 19:58:48 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/19 12:48:52 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main( void )
     std::cout << "d is " << d << std::endl;
     std::cout << "a is " << a.toInt() << " as integer" << std::endl;
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-    std::cout << "c is " << c.tofloat() << " as integer" << std::endl;
+    std::cout << "c is " << c.toInt() << " as integer" << std::endl;
     std::cout << "d is " << d.toInt() << " as integer" << std::endl;
     return 0;
 }
