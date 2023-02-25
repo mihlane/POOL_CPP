@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 15:30:15 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 13:28:29 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/25 14:37:11 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/25 17:51:09 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-int main()
+#include <iostream>
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-{
-    Weapon club = Weapon("moss");
-    HumanA bob("Bob", club);
-    bob.attack();
-    club.setType("ferdi");
-    bob.attack();
-}
-{
-    Weapon club = Weapon("ak47");
-    HumanB jim("Jim");
-    jim.attack();
-    club.setType("vector");
-    jim.setWeapon(club);
-    jim.attack();
-}
-}
- 
+    public:
+         void makeSound() const
+       {
+            std::cout << "a dog is barikng\n";
+       }
+       std::string  getType() const
+       {
+            return (this->type);
+       }
+};
+
+#endif

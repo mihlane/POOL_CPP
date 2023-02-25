@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 15:30:15 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 13:28:29 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/25 14:36:15 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/25 17:50:48 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int main()
+#include <iostream>
+
+class Animal
 {
-{
-    Weapon club = Weapon("moss");
-    HumanA bob("Bob", club);
-    bob.attack();
-    club.setType("ferdi");
-    bob.attack();
-}
-{
-    Weapon club = Weapon("ak47");
-    HumanB jim("Jim");
-    jim.attack();
-    club.setType("vector");
-    jim.setWeapon(club);
-    jim.attack();
-}
-}
- 
+protected:
+        std::string type;
+public:
+       virtual void makeSound() const
+       {
+            std::cout << "an animal is making it's own sound\n";
+       }
+       virtual std::string  getType() const 
+       {
+            return (this->type);
+       }
+    
+};
+
+#endif

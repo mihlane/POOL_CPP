@@ -1,50 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 23:11:34 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 12:07:57 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/19 22:55:28 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/25 13:02:52 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+class ClapTrap
 {
-private:
+protected:
+        std::string Name;
+        int         Hit_p;
+        int         Energy_p;
+        int         Attack_dmg;
 public:
-        ScavTrap( std::string &name)
+        ClapTrap(std::string name)
         {
             std::cout << "constructor called\n";
-            this->Hit_p = 100;
-            this->Energy_p = 50;
-            this->Attack_dmg = 20;
-            this->Name = name;  
+            this->Hit_p = 10;
+            this->Energy_p = 10;
+            this->Attack_dmg = 0;
+            this->Name = name;
         }
-        ScavTrap()
+        ClapTrap()
         {
-            std::cout << "constructor called\n";
+            std::cout << "constructor called\n"; 
         }
-        ~ScavTrap()
+        ~ClapTrap()
         {
             std::cout << "Destructor called\n";
         }
-        void guardGate()
-        {
-            std::cout << "ScavTrap " << this->Name << "is in Gate Keeper mode\n";
-        }
         void attack(const std::string& target)
         {
-            if (Energy_p > 0)
+            if (Energy_p > 0 || Hit_p > 0)
             {
-                std::cout << "ScavTrap" << Name <<target << ", causing " << Hit_p << "points of damage\n";
+                std::cout << "ClapTrap" << Name <<target << ", causing " << Hit_p << "points of damage\n";
                 Energy_p--;
             }
             else
@@ -68,8 +66,8 @@ public:
             if (Energy_p > 0)
             {
                 Energy_p--;
-                if ((amount + Hit_p) >= 100)
-                    Hit_p = 100;
+                if ((amount + Hit_p) >= 10)
+                    Hit_p = 10;
                 else
                     Hit_p +=amount;
                 std::cout << Name << "repaired with " << amount  << "of points\n"; 

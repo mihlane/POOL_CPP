@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:30:13 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/23 13:18:16 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/25 13:28:58 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ private:
 public:
     HumanB(std::string str)
     {
+        std::cout << "HumanB construcror\n";
         this->name = str;
     }
     ~HumanB()

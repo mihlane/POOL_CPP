@@ -1,50 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 23:11:34 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 12:07:57 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/25 11:57:35 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/25 13:07:48 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 private:
 public:
-        ScavTrap( std::string &name)
+        FragTrap( std::string &name)
         {
             std::cout << "constructor called\n";
             this->Hit_p = 100;
-            this->Energy_p = 50;
-            this->Attack_dmg = 20;
+            this->Energy_p = 100;
+            this->Attack_dmg = 30;
             this->Name = name;  
         }
-        ScavTrap()
+        FragTrap()
         {
             std::cout << "constructor called\n";
         }
-        ~ScavTrap()
+        ~FragTrap()
         {
             std::cout << "Destructor called\n";
         }
-        void guardGate()
+        void highFivesGuys(void)
         {
-            std::cout << "ScavTrap " << this->Name << "is in Gate Keeper mode\n";
+            std::cout << "FragTrap " << this->Name << "is in Gate Keeper mode\n";
         }
         void attack(const std::string& target)
         {
             if (Energy_p > 0)
             {
-                std::cout << "ScavTrap" << Name <<target << ", causing " << Hit_p << "points of damage\n";
+                std::cout << "FragTrap" << Name <<target << ", causing " << Hit_p << "points of damage\n";
                 Energy_p--;
             }
             else

@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:30:09 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/23 12:29:35 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:49:03 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
 
 HumanA::HumanA(std::string str, Weapon &hu) : Human_A(hu)
 {
+   // std::cout << "HumanA constructor\n";
     this->name = str;
 }
 

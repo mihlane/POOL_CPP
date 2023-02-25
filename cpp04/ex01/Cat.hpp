@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 15:30:15 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 13:28:29 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/25 14:37:52 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/25 18:09:48 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#ifndef Cat_HPP
+#define Cat_HPP
+#include "Animal.hpp"
+#include <iostream>
+#include "Brain.hpp"
 
-int main()
+class Cat : public Animal
 {
-{
-    Weapon club = Weapon("moss");
-    HumanA bob("Bob", club);
-    bob.attack();
-    club.setType("ferdi");
-    bob.attack();
-}
-{
-    Weapon club = Weapon("ak47");
-    HumanB jim("Jim");
-    jim.attack();
-    club.setType("vector");
-    jim.setWeapon(club);
-    jim.attack();
-}
-}
- 
+    private:
+        Brain c_b;
+    public:
+        void makeSound() const
+        {
+            std::cout << "a cat is meowing\n";
+        }
+       std::string  getType() const
+       {
+            return (this->type);
+       }
+};
+
+#endif

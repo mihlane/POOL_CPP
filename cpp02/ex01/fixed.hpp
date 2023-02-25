@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:26:34 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/19 12:56:27 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:10:47 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ public:
     Fixed (const float floaat)
 {
 	value = roundf(floaat * pow(2, this->fract_bit));
-	// std::cout << "I Enter Float  = " << integer << "\n";
 }
     Fixed(Fixed const &src)
     {

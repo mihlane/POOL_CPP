@@ -5,31 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 15:30:15 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 13:28:29 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/25 14:33:42 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/25 17:51:34 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
-{
-    Weapon club = Weapon("moss");
-    HumanA bob("Bob", club);
-    bob.attack();
-    club.setType("ferdi");
-    bob.attack();
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    j->makeSound(); // will output the dog sound!
+    meta->makeSound(); 
+    return 0;
 }
-{
-    Weapon club = Weapon("ak47");
-    HumanB jim("Jim");
-    jim.attack();
-    club.setType("vector");
-    jim.setWeapon(club);
-    jim.attack();
-}
-}
- 

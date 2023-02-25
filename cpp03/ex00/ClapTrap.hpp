@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:55:28 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/24 21:15:53 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/25 11:51:12 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ class ClapTrap
 {
 private:
         std::string Name;
-        int         Hit_p = 10;
-        int         Energy_p = 10;
-        int         Attack_dmg = 0;
+        int         Hit_p;
+        int         Energy_p;
+        int         Attack_dmg;
 public:
         ClapTrap(std::string name)
         {
@@ -29,6 +29,10 @@ public:
             this->Energy_p = 10;
             this->Attack_dmg = 0;
             this->Name = name;
+        }
+        ClapTrap()
+        {
+            std::cout << "constructor called\n"; 
         }
         ~ClapTrap()
         {

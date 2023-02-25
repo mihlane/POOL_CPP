@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:30:20 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/09 23:21:45 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:49:19 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
     }
     Weapon()
     {
-        std::cout << "Weapon constructor\n";
+       // std::cout << "Weapon constructor\n";
     }
     Weapon(std::string const &str)
     {

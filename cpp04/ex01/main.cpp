@@ -5,31 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 15:30:15 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 13:28:29 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/25 14:33:42 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/25 18:01:30 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
-{
-    Weapon club = Weapon("moss");
-    HumanA bob("Bob", club);
-    bob.attack();
-    club.setType("ferdi");
-    bob.attack();
+const Animal* j = new Dog();
+const Animal* i = new Cat();
+delete j;//should not create a leak
+delete i;
+
+return 0;
 }
-{
-    Weapon club = Weapon("ak47");
-    HumanB jim("Jim");
-    jim.attack();
-    club.setType("vector");
-    jim.setWeapon(club);
-    jim.attack();
-}
-}
- 

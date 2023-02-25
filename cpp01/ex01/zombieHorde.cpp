@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:57:44 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/07 15:16:30 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:33:07 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Zombie* zombieHorde( int N, std::string name )
     while (N--)
     {
         z[N].set(name);
-        
     }
     return (z);
 }
