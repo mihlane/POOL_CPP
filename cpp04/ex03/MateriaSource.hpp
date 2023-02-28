@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 14:33:42 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/26 18:54:19 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/28 11:24:14 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/28 13:05:30 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-int main()
+#include <iostream>
+#include "AMateria.hpp"
+
+class MateriaSource
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    delete j;//should not create a leak
-    delete i;
-    return 0;
-}
+    public:
+        MateriaSource()
+        {
+            
+        }
+        ~MateriaSource() {}
+        void learnMateria(AMateria*);
+        AMateria* createMateria(std::string const & type);
+};
+#endif

@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 14:36:15 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/26 17:30:55 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/02/27 15:32:09 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/02/28 15:04:23 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
 #include <iostream>
 
-class Animal
+class AMateria
 {
 protected:
         std::string type;
 public:
-       virtual void makeSound() const
-       {
-            std::cout << "an animal is making it's own sound\n";
-       }
-       virtual std::string  getType() const 
-       {
-            return (this->type);
-       }
-      Animal()
-       {
-          std::cout << "Animal construcor called \n";
-       }
-       virtual ~Animal()
-       {
-          std::cout << "Animal destructor called\n";
-       }
-    
+    AMateria(std::string const & type);
+    AMateria()
+    {
+        std::cout << "AMateria constructor called\n";
+    }
+    ~AMateria()
+    {
+         std::cout << "AMateria destructor called\n";
+    }
+// [...]
+    std::string const & getType() const; //Returns the materia type
+    virtual AMateria* clone() const = 0;
+    virtual void use(ICharacter& target);
 };
 
 #endif
