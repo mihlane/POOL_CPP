@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 15:45:23 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/28 15:06:25 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/01 13:12:32 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Cure : public AMateria
 {

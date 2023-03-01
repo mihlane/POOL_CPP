@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:45:29 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 12:33:57 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/01 15:08:59 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int main()
 {
-    Zombie *p =  zombieHorde(10, "ssd");
+    Zombie *p =  zombieHorde(0, "ssd");
+    if (p == NULL)
+        return (0);
     for (int i = 0; i < 10;i++)
         p[i].announce();
 

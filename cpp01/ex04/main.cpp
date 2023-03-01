@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 00:39:26 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/23 16:52:52 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/01 21:41:24 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,8 @@ int main(int ac , char **av)
         std::ofstream replaced(std::string(av[1]) + ".replaced");
         s1 = av[2];
         s2 = av[3];
-        // fd = av[1];
-        // fd.open(av[1]);
         if (fd.is_open())
         {
-            // replaced.open(std::string(av[1]) + ".replaced");
             while (std::getline(fd, str))
             {
                 index = 0;

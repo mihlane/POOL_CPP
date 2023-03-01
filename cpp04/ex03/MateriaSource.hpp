@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:24:14 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/28 13:05:30 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/01 13:24:09 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,16 @@ class MateriaSource
     public:
         MateriaSource()
         {
+            std::cout << "MateriaSource constructor called\n";
+        }
+        ~MateriaSource() 
+        {
+            std::cout << "MateriaSource destructor called\n";
+        }
+        void learnMateria(AMateria*)
+        {
             
         }
-        ~MateriaSource() {}
-        void learnMateria(AMateria*);
         AMateria* createMateria(std::string const & type);
 };
 #endif
