@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:26:43 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/02 14:10:49 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/04 23:26:33 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ Fixed::Fixed (const int n)
 // }
 Fixed::Fixed (const float floaat)
 {
+    std::cout << "Float constructor called\n";
     value = roundf(floaat * pow(2, this->fract_bit));
 }
 
@@ -81,3 +82,9 @@ std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
     o << rhs.getRawBits();
     return o;
 }
+
+    // std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
+    // {
+    // 	o << rhs.getRawBits();
+    // 	return o;
+    // }

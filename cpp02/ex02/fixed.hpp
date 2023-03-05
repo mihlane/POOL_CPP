@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 13:00:58 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/02 15:54:52 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/05 18:07:14 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
     Fixed& operator=(Fixed const &lp);
     ~Fixed();
     float getRawBits(void) const;
+    void   setRawBits(int const raw);
     int 	toInt( void ) const;
     float	tofloat( void ) const;
     Fixed operator++(int);
@@ -50,5 +51,7 @@ public:
     static Fixed const & min(Fixed const  &a, Fixed const  &b);
     static Fixed const & max(Fixed const  &a, Fixed const  &b);
 };
+
+std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif

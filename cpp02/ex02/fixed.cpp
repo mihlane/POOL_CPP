@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 13:01:09 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/02 15:55:59 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/05 18:10:57 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@
         return(s);
     }
 
+    void    Fixed::setRawBits(int const raw)
+    {
+        std::cout << "setRawBits member function called\n";
+        this->value = raw;
+    }
 
     int 	Fixed::toInt( void ) const
     {
@@ -137,13 +142,13 @@
        Fixed Fixed::operator *(Fixed const &a)
     {
         Fixed tmp = *this;
-        tmp.value = this->value * a.value;
+       tmp.setRawBits((this->value * a.value) / (1 << fract_bit));
         return (tmp);
     }
        Fixed Fixed::operator /(Fixed const &a)
     {
         Fixed tmp = *this;
-        tmp.value = this->value / a.value;
+       tmp.setRawBits((this->value / a.value) * (1 << fract_bit));
         return (tmp);
     }
      Fixed& Fixed::operator++() {

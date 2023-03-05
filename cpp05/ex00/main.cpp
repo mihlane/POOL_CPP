@@ -6,22 +6,28 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:12:17 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/03 15:36:40 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/05 22:15:42 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bureaucrat.hpp"
-#include <iostream>
 
-int main()
+int main(void)
 {
+    Bureaucrat A("Unknown",140);
+
+    std::cout << A;
     try
     {
-        Bureaucrat a("mhabibi", 170);
+        for (size_t i = 0; i < 15; i++)
+        {
+            A.getGrade();
+        }
     }
-    catch(std::exception & e)
+    catch(const std::exception& e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << "\033[1;31mException Catched\033[0m\n";
+        std::cerr << e.what();
     }
-    return (0);
+    std::cout << A;
 }

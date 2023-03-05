@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:26:34 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/02 14:14:34 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/04 23:30:26 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ public:
     //     return (o);
     // }
 };
+std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif
