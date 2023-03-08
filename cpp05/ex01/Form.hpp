@@ -5,83 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/03 15:38:09 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/04 19:03:01 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/03/06 20:45:10 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/03/08 12:24:09 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Form_HPP
-# define Form_HPP
+#ifndef  FORM_HPP
+#define FORM_HPP
 
-# include <iostream>
+#include <iostream>
+#include <string>
+#include <exception>
+#include <iomanip>
 #include "bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
-    private:
+private:
     std::string const name;
     bool isSigned;
-    const int gradeToSign;
-    const int gradeToExecute;
-    public:
-    ~Form();
+    int const gradeToSign;
+    int const gradeToExecute;
+public:
     Form(std::string name, int gradeToSign, int gradeToExecute);
-    int getGradeToSign(void)
-    {
-        return (gradeToSign);
-    }
-    int getGradeToExecute(void)
-    {
-        return (gradeToExecute);
-    }
-    bool getIsSigned(void)
-    {
-        return (isSigned);
-    }
-    std::string getName(void)
-    {
-        return (name);
-    }
+    ~Form();
+    Form(Form const & src);
+    Form & operator=(Form const & rhs);
     class GradeTooHighException : public std::exception
     {
         const char * what () const throw () {
-            return "Grade too high";
+            return "Grade too high\n";
         }
     };
     class GradeTooLowException : public std::exception
     {
         const char * what () const throw () {
-            return "Grade too low";
+            return "Grade too low\n";
         }
     };
-    void beSigned(Bureaucrat &bureaucrat)
-    {
-        if (bureaucrat.getGrade() <= gradeToSign)
-            isSigned = true;
-        else
-            throw Form::GradeTooLowException();
-    }
-    void setSigned(bool isSigned)
-    {
-        this->isSigned = isSigned;
-    }
-    void    setIsSigned(bool isSigned)
-    {
-        this->isSigned = isSigned;
-    }
+    void setSigned(bool isSigned);
+    int getGradeToSign() const;
+    bool getIsSigned() const;
+    int getGradeToExecute() const;
+    std::string getName() const;
+    void    besigned(Bureaucrat bureaucrat);
+    // void signForm(Bureaucrat &bureaucrat);
 };
-Form::~Form()
-{
-    std::cout << "Form destructor called" << std::endl;
-}
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
-{
-    std::cout << "Form constructor called" << std::endl;
-    if (gradeToSign < 1 || gradeToExecute < 1)
-        throw Form::GradeTooHighException();
-    else if (gradeToSign > 150 || gradeToExecute > 150)
-        throw Form::GradeTooLowException();
-    else
-        isSigned = false;
-}
+std::ostream& operator<<(std::ostream& out, const Form& form);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:55:28 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 11:48:49 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/07 14:36:52 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,61 +18,18 @@ class ClapTrap
 {
 protected:
         std::string Name;
-        int         Hit_p;
-        int         Energy_p;
-        int         Attack_dmg;
+        unsigned int         Hit_p;
+        unsigned int         Energy_p;
+        unsigned int         Attack_dmg;
 public:
-        ClapTrap(std::string name)
-        {
-            std::cout << "constructor called\n";
-            this->Hit_p = 10;
-            this->Energy_p = 10;
-            this->Attack_dmg = 0;
-            this->Name = name;
-        }
-        ClapTrap()
-        {
-            std::cout << "constructor called\n"; 
-        }
-        ~ClapTrap()
-        {
-            std::cout << "Destructor called\n";
-        }
-        void attack(const std::string& target)
-        {
-            if (Energy_p > 0)
-            {
-                std::cout << "ClapTrap" << Name <<target << ", causing " << Hit_p << "points of damage\n";
-                Energy_p--;
-            }
-            else
-                std::cout << Name << "Has no enough energy to attak\n";
-        }
-        void takeDamage(unsigned int amount)
-        {
-            if (amount >= Hit_p)
-            {
-                Hit_p = 0;
-                std::cout << Name << "has taked " << amount << "of damage\n";
-            }
-            else
-            {
-                Hit_p -=amount;
-                std::cout << Name << "has taked " << amount << "of damage\n";
-            }
-        }
-        void beRepaired(unsigned int amount)
-        {
-            if (Energy_p > 0)
-            {
-                Energy_p--;
-                if ((amount + Hit_p) >= 10)
-                    Hit_p = 10;
-                else
-                    Hit_p +=amount;
-                std::cout << Name << "repaired with " << amount  << "of points\n"; 
-            }
-        }
+ClapTrap();
+ClapTrap(std::string name);
+ClapTrap(const ClapTrap &src);
+ClapTrap &operator=(const ClapTrap &rhs);
+~ClapTrap();
+void attack(const std::string& target);
+void takeDamage(unsigned int amount);
+void beRepaired(unsigned int amount);
 };
 
 

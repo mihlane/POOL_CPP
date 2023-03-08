@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:37:11 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 17:51:09 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:57:13 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@
 class Dog : public Animal
 {
     public:
-         void makeSound() const
-       {
-            std::cout << "a dog is barikng\n";
-       }
-       std::string  getType() const
-       {
-            return (this->type);
-       }
+          Dog();
+          Dog(const Dog &dog);
+          ~Dog();
+          Dog &operator=(const Dog &dog);      
+          void makeSound() const;
+          std::string  getType() const;
 };
 
 #endif

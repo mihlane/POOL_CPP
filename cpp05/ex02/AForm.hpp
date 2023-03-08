@@ -5,62 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/04 19:22:50 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/05 21:30:45 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/03/08 11:21:48 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/03/08 14:50:51 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AForm_HPP
-# define AForm_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class AForm
 {
-    protected:
-    std::string const name;
-    bool isSigned;
-    const int gradeToSign;
-    const int gradeToExecute;
+    private:
+        std::string const name;
+        bool isSigned;
+        int const gradeToSign;
+        int const gradeToExecute;
     public:
-    ~AForm(){};
-    AForm(std::string name, int gradeToSign, int gradeToExecute);
-    int getGradeToSign(void)
-    {
-        return (gradeToSign);
-    }
-    int getGradeToExecute(void)
-    {
-        return (gradeToExecute);
-    }
-    bool getIsSigned(void)
-    {
-        return (isSigned);
-    }
-    std::string getName(void)
-    {
-        return (name);
-    }
-    class GradeTooHighException : public std::exception
+        AForm(std::string const & name, int gradeToSign, int gradeToExecute);
+        AForm(AForm const & src);
+        ~AForm();
+        AForm & operator=(AForm const & rhs);
+        std::string const & getName() const;
+        void execute(Bureaucrat const & executor) const;
+        bool getIsSigned() const;
+        int getGradeToSign() const;
+        int getGradeToExecute() const;
+        void beSigned(Bureaucrat const & bureaucrat);
+        void execute(Bureaucrat const & executor) const;
+        void setSigned(bool isSigned);
+        class GradeTooHighException : public std::exception
     {
         const char * what () const throw () {
-            return "Grade too high";
+            return "Grade too high\n";
         }
     };
     class GradeTooLowException : public std::exception
     {
         const char * what () const throw () {
-            return "Grade too low";
+            return "Grade too low\n";
         }
     };
-    void beSigned(Bureaucrat &bureaucrat)
-    {
-        if (bureaucrat.getGrade() <= gradeToSign)
-            isSigned = true;
-        else
-            throw GradeTooLowException();
-    }
 };
 
 #endif

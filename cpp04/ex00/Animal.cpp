@@ -6,7 +6,42 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:59:42 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 17:59:43 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/07 23:02:51 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Animal.hpp"
+
+Animal::Animal()
+{
+    // std::cout << "Animal constructor called\n";
+     this->type = "Animal";
+}
+
+Animal::Animal(const Animal &animal)
+{
+    // std::cout << "Animal copy constructor called\n";
+     this->type = animal.type;
+}
+
+Animal::~Animal()
+{
+    std::cout << "Animal destructor called\n";
+}
+
+Animal &Animal::operator=(const Animal &animal)
+{
+     this->type = animal.type;
+     return (*this);
+}
+
+void Animal::makeSound() const
+{
+     std::cout << "an animal is making it's own sound\n";
+}
+
+std::string  Animal::getType() const 
+{
+     return (this->type);
+}
 

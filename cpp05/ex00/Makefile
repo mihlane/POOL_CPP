@@ -1,6 +1,7 @@
 NAME  = Fixed
 
 SRCS  = main.cpp\
+		bureaucrat.cpp\
 
 CC = c++
 

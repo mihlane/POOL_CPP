@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:37:52 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/25 17:50:58 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:39:36 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 class Cat : public Animal
 {
     public:
-        void makeSound() const
-        {
-            std::cout << "a cat is meowing\n";
-        }
-       std::string  getType() const
-       {
-            return (this->type);
-       }
+        Cat();
+        Cat(const Cat &cat);
+        ~Cat();
+        Cat &operator=(const Cat &cat);
+        void makeSound() const;
+        std::string  getType() const;
+       
+       
 };
 
 #endif
