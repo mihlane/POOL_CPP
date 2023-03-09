@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 11:57:35 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/09 22:00:07 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/03/08 22:58:29 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/03/09 00:37:30 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef INTERN_HPP
+#define INTERN_HPP
 
 #include <iostream>
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "AForm.hpp"
 
-class FragTrap : public ClapTrap
+class Intern
 {
-private:
-public:
-FragTrap( std::string name);
-FragTrap();
-~FragTrap();
-FragTrap(const FragTrap &frag);
-void highFivesGuys(void);
-void attack(const std::string& target);
-void takeDamage(unsigned int amount);
-void beRepaired(unsigned int amount);
-FragTrap &operator=(const FragTrap &frag);
+    private:
+    public:
+        Intern();
+        ~Intern();
+        Intern(Intern const & src);
+        Intern & operator=(Intern const & src);
+        AForm *makeForm(std::string formName, std::string target);
+        class UnknownFormException : public std::exception
+		{	public:
+				const char * what() const throw();};
 };
-
 
 #endif

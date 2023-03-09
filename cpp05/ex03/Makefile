@@ -1,6 +1,13 @@
-NAME  = ClapTrap
+NAME  = Fixed
 
-SRCS  = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
+SRCS  = main.cpp \
+AForm.cpp\
+bureaucrat.cpp\
+  RobotomyRequestForm.cpp\
+   PresidentialPardonForm.cpp\
+	ShrubberyCreationForm.cpp\
+	Intern.cpp\
+		 
 
 CC = c++
 

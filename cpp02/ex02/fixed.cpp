@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 13:01:09 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/05 18:10:57 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/09 03:10:41 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@
     Fixed::Fixed (const float floaat)
     {
     	value = roundf(floaat * pow(2, this->fract_bit));
-    	// std::cout << "I Enter Float  = " << integer << "\n";
     }
     Fixed::Fixed(Fixed const &src)
     {
@@ -78,20 +77,6 @@
     	float2int = (float)value /256;
     	return (float2int);
     }
-    // float   tofloat(void) const
-    // {
-    //     return ((float) (value / (1 << fract_bit)));
-    // }
-    // int toInt(void)const
-    // {
-    //     int i = (this->value  >> fract_bit);
-    //     // std::cout << i << std::endl;
-    //     return ( i);
-    // }
-    // std::ostream & operator<<(std::ostream & o , Fixed const &obj)
-    // {
-    //     o << obj.getRawbits();
-    //     return (o);
     Fixed Fixed::operator++(int) 
     {
         Fixed temp = *this;
@@ -109,37 +94,49 @@
         tmp.value = this->value + a.value;
         return (tmp);
     }
-     Fixed Fixed::operator -(Fixed const &a)
+    Fixed Fixed::operator -(Fixed const &a)
     {
         Fixed tmp = *this;
         tmp.value = this->value - a.value;
         return (tmp);
     }
-    Fixed Fixed::operator  >(Fixed const &a)
+    bool Fixed::operator  >(Fixed const &a)
     {
-       return(this->value > a.value);
+       if (value > a.value)
+		    return true;
+	    return false;
     }
-     Fixed Fixed::operator  <(Fixed const &a)
+     bool Fixed::operator  <(Fixed const &a)
     {
-       return(this->value < a.value);
+        if (value < a.value)
+		    return true;
+	    return false;
     }
-     Fixed Fixed::operator  >=(Fixed const &a)
+     bool Fixed::operator  >=(Fixed const &a)
     {
-       return(this->value >= a.value);
+       if (value >= a.value)
+		    return true;
+	    return false;
     }
-     Fixed Fixed::operator  <=(Fixed const &a)
+     bool Fixed::operator  <=(Fixed const &a)
     {
-       return(this->value <= a.value);
+       if (value <= a.value)
+		    return true;
+	    return false;
     }
-     Fixed Fixed::operator  ==(Fixed const &a)
+     bool Fixed::operator  ==(Fixed const &a)
     {
-       return(this->value == a.value);
+       if (value == a.value)
+		    return true;
+	    return false;
     }
-     Fixed Fixed::operator  !=(Fixed const &a)
+     bool Fixed::operator  !=(Fixed const &a)
     {
-       return(this->value != a.value);
+       if (value != a.value)
+		    return true;
+	    return false;
     }
-       Fixed Fixed::operator *(Fixed const &a)
+    Fixed Fixed::operator *(Fixed const &a)
     {
         Fixed tmp = *this;
        tmp.setRawBits((this->value * a.value) / (1 << fract_bit));
@@ -151,10 +148,11 @@
        tmp.setRawBits((this->value / a.value) * (1 << fract_bit));
         return (tmp);
     }
-     Fixed& Fixed::operator++() {
+    Fixed& Fixed::operator++() {
         ++value;
         return *this;
-    } Fixed& Fixed::operator--() {
+    }
+    Fixed& Fixed::operator--() {
         --value;
         return *this;
     }

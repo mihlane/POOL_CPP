@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 22:55:32 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/07 21:25:57 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:02:54 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "constructor called\n";
+	std::cout << "ClapTrap default constructor called\n";
 	this->Hit_p = 10;
 	this->Energy_p = 10;
 	this->Attack_dmg = 0;
@@ -23,17 +23,21 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "constructor called\n"; 
+	std::cout << "Claptrap constructor called\n"; 
+	this->Hit_p = 10;
+	this->Energy_p = 10;
+	this->Attack_dmg = 0;
+	this->Name = "Default";
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called\n";
+	std::cout << "ClapTrap Destructor called\n";
 }
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (Energy_p > 0 || Hit_p > 0)
+	if (Energy_p > 0 && Hit_p > 0)
 	{
 		std::cout << "ClapTrap " << Name << " attacked "<< target << ", causing " << Hit_p << " points of damage\n";
 		Energy_p--;
@@ -80,6 +84,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
 
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "ClapTrap Copy constructor called\n";
     *this = src;
 }

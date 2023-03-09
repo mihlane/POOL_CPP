@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 23:11:42 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/09 21:53:09 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:03:21 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ScavTrap::ScavTrap()
 {
-    std::cout << "constructor called\n";
+    std::cout << "ScavTrap default constructor called\n";
     this->Hit_p = 100;
     this->Energy_p = 50;
     this->Attack_dmg = 20;
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap( std::string name)
 {
-    std::cout << "constructor called\n";
+    std::cout << "ScavTrap parametreized constructor called\n";
     this->Hit_p = 100;
     this->Energy_p = 50;
     this->Attack_dmg = 20;
@@ -33,12 +33,12 @@ ScavTrap::ScavTrap( std::string name)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "ScavTrap Destructor called\n";
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src)
 {
-    std::cout << "copy constructor called\n";
+    std::cout << "ScavTrap copy constructor called\n";
     *this = src;
 
 }
@@ -71,7 +71,7 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::takeDamage(unsigned int amount)
 {
-    if (amount >= Hit_p)
+    if ((int)amount >= Hit_p)
     {
         Hit_p = 0;
         std::cout << Name << " has taked " << amount << " of damage\n";

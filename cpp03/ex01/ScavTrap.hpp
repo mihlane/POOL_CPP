@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 23:11:34 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/07 13:34:32 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/09 20:35:33 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ ScavTrap( std::string name);
 ScavTrap();
 ScavTrap(const ScavTrap &src);
 ScavTrap &operator=(const ScavTrap &rhs);
-
-// ScavTrap()
-// {
-//     std::cout << "constructor called\n";
-// }
 ~ScavTrap();
 void guardGate();
 void attack(const std::string& target);

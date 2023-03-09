@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 11:57:46 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/07 21:26:51 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:02:40 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap( std::string name)
 {
-    std::cout << "constructor called\n";
+    std::cout << "FragTrap default constructor called\n";
     this->Hit_p = 100;
     this->Energy_p = 100;
     this->Attack_dmg = 30;
@@ -23,12 +23,12 @@ FragTrap::FragTrap( std::string name)
 
 FragTrap::FragTrap()
 {
-    std::cout << "constructor called\n";
+    std::cout << "FragTrap constructor called\n";
 }
 
 FragTrap::~FragTrap()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "FragTrap Destructor called\n";
 }
 
 void FragTrap::highFivesGuys(void)
@@ -76,7 +76,7 @@ void FragTrap::beRepaired(unsigned int amount)
 
 FragTrap::FragTrap(const FragTrap &frag)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "FragTrap Copy constructor called\n";
     *this = frag;
 }
 

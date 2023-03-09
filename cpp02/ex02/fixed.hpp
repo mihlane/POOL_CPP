@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 13:00:58 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/05 18:07:14 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/09 03:06:57 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ public:
     Fixed operator--(int);
     Fixed operator +(Fixed const &a);
     Fixed operator -(Fixed const &a);
-    Fixed operator  >(Fixed const &a);
-    Fixed operator  <(Fixed const &a);
-    Fixed operator  >=(Fixed const &a);
-    Fixed operator  <=(Fixed const &a);
-    Fixed operator  ==(Fixed const &a);
-    Fixed operator  !=(Fixed const &a);
+    bool operator  >(Fixed const &a);
+    bool operator  <(Fixed const &a);
+    bool operator  >=(Fixed const &a);
+    bool operator  <=(Fixed const &a);
+    bool operator  ==(Fixed const &a);
+    bool operator  !=(Fixed const &a);
     Fixed operator *(Fixed const &a);
     Fixed operator /(Fixed const &a);
     Fixed& operator++();
