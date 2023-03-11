@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:36:15 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/27 15:21:34 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/11 03:04:47 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,12 @@ class Animal
 protected:
         std::string type;
 public:
-       virtual void makeSound()  const = 0;
-      //  {
-      //       std::cout << "an animal is making it's own sound\n";
-      //  }
-       virtual std::string  getType() const 
-       {
-            return (this->type);
-       }
-      Animal()
-       {
-          std::cout << "Animal construcor called \n";
-       }
-       virtual ~Animal()
-       {
-          std::cout << "Animal destructor called\n";
-       }
-    
+     Animal();
+     Animal(const Animal &animal);
+     virtual ~Animal();
+     Animal &operator=(const Animal &animal);     
+     virtual void makeSound() const = 0;
+     const std::string& getType() const;
 };
 
 #endif

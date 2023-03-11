@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:07:01 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/02/26 16:23:45 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/11 03:08:54 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,10 @@ class Brain
 private:
     std::string ideas[100];
     public:
-    Brain()
-    {
-        std::cout << "brain constructor called\n";
-    }
-    ~Brain()
-    {
-        std::cout << "brain destructor called\n";
-    }
+    Brain();
+    ~Brain();
+    Brain(const Brain &brain);
+    Brain &operator=(const Brain &brain);
 };
 
 

@@ -1,6 +1,6 @@
-NAME  = ClapTrap
+NAME  = Animal
 
-SRCS  = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
+SRCS  = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 CC = c++
 

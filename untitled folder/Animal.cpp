@@ -6,37 +6,53 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:59:42 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/11 03:06:41 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/08 00:33:05 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
+
 Animal::Animal()
 {
-    std::cout << "Animal constructor called\n";
-     this->type = "Animal";
+    // std::cout << "Animal construcor called \n";
 }
 
-Animal::Animal(const Animal &animal)
+// Animal::Animal(std::string type)
+// {
+//     this->type = type;
+//     // std::cout << "Animal construcor called \n";
+// }
+
+Animal::Animal(Animal const & src)
 {
-    std::cout << "Animal copy constructor called\n";
-     *this = animal;
+    // std::cout << "Animal copy constructor called\n";
+    *this = src;
 }
 
 Animal::~Animal()
 {
-    std::cout << "Animal destructor called\n";
+    // std::cout << "Animal destructor called\n";
 }
 
-Animal &Animal::operator=(const Animal &animal)
+void Animal::makeSound() const
 {
-     std::cout << "Animal Copy assignment operator called" << std::endl;
-     this->type = animal.type;
-     return (*this);
+    // std::cout << "an animal is making it's own sound\n";
 }
 
-const std::string  &Animal::getType() const 
+std::string Animal::getType() const
 {
-     return (this->type);
+    return (this->type);
+}
+
+Animal & Animal::operator<<(Animal const & rhs)
+{
+    this->type = rhs.type;
+    return (*this);
+}
+
+Animal & Animal::operator=(Animal const & rhs)
+{
+    this->type = rhs.type;
+    return (*this);
 }

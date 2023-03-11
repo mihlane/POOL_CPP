@@ -6,34 +6,43 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:33:42 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/10 11:52:48 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:00:26 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Dog.hpp"
 
-void    fun(void)
+int main(void)
 {
-        const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
-    j->makeSound(); 
-    meta->makeSound(); 
-    delete j;
-    delete i;
-    delete meta;
-}
+    Animal *a[10];
 
-int main()
-{
-fun(); 
-// while(1){};
+    int i = 0;
+    while (i < 10)
+    {
+        a[i] = new Dog("Rocky"); 
+        i++;
+        if (i == 5)
+        {
+            while (i < 10)
+            {
+                a[i] = new Cat("Tom"); 
+                i++;
+            }
+        }
+    }
+
+    for (int i = 0; i < 10 ; i++)
+    {
+        std::cout << a[i]->getType() << std::endl;
+    }
+
+    for (int i = 0; i < 10 ; i++)
+    {
+        delete a[i];
+    }
     return 0;
+    // Dog Base("Hello");
+    // Dog tmp = Base;
 }
