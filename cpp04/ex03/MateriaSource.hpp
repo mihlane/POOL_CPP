@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:24:14 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/01 13:24:09 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:57:22 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,18 @@
 
 #include <iostream>
 #include "AMateria.hpp"
-
-class MateriaSource
+#include "IMateriaSource.hpp"
+class MateriaSource : public IMateriaSource
 {
     public:
-        MateriaSource()
-        {
-            std::cout << "MateriaSource constructor called\n";
-        }
-        ~MateriaSource() 
-        {
-            std::cout << "MateriaSource destructor called\n";
-        }
-        void learnMateria(AMateria*)
-        {
-            
-        }
+        MateriaSource();
+        ~MateriaSource() ;
+        void learnMateria(AMateria*);
         AMateria* createMateria(std::string const & type);
+        MateriaSource(MateriaSource const & src);
+        MateriaSource & operator=(MateriaSource const & rhs);
+    private:
+        AMateria *materia[4];
 };
+
 #endif

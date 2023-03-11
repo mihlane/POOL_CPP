@@ -1,6 +1,6 @@
-NAME  = Animal
+NAME  = cpp05
 
-SRCS  = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
+SRCS  = AMateria.cpp Character.cpp Cure.cpp Ice.cpp IMateriaSource.cpp main.cpp Icharacter.cpp IMateriaSource.cpp MateriaSource.cpp
 
 CC = c++
 

@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:59:42 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/07 23:02:51 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:10:55 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Animal::Animal()
 {
-    // std::cout << "Animal constructor called\n";
+    std::cout << "Animal constructor called\n";
      this->type = "Animal";
 }
 
 Animal::Animal(const Animal &animal)
 {
-    // std::cout << "Animal copy constructor called\n";
+    std::cout << "Animal copy constructor called\n";
      this->type = animal.type;
 }
 
