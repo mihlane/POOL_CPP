@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:06:54 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/11 03:11:52 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/11 23:40:53 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 Brain::Brain()
 {
     std::cout << "Brain constructor called\n";
+    for (int i = 0; i < 100; i++)
+        this->ideas[i] = "Idea " + std::to_string(i);
 }
 
 Brain::Brain(const Brain &brain)
 {
     std::cout << "Brain copy constructor called\n";
-    *this = brain;
+    for (int i = 0; i < 100; i++)
+    {
+        this->ideas[i] = brain.ideas[i];
+    }
 }
 
 Brain::~Brain()

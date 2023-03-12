@@ -1,4 +1,4 @@
-NAME  = Fixed
+NAME  = Bureaucrat
 
 SRCS  = main.cpp\
 		bureaucrat.cpp\

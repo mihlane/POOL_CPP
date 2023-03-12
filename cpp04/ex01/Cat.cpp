@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:59:54 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/11 20:29:00 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/11 22:58:11 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,3 @@ void Cat::makeSound() const
 {
     std::cout << "a cat is meowing\n";
 }
-// std::string  Cat::getType() const
-// {
-//      return (this->type);
-// }

@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 16:12:10 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 11:53:44 by mhabibi-         ###   ########.fr       */
+/*   Created: 2023/03/12 14:32:06 by mhabibi-          #+#    #+#             */
+/*   Updated: 2023/03/12 15:00:48 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
@@ -65,6 +65,17 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
         this->grade = other.getGrade();
     return *this;
 }
+
+const char * Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return "Grade is too high\n";
+}
+
+const char * Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return "Grade is too low\n";
+}
+
 
 // std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs)
 //     {

@@ -1,6 +1,6 @@
 NAME  = cpp05
 
-SRCS  = AMateria.cpp Character.cpp Cure.cpp Ice.cpp IMateriaSource.cpp main.cpp Icharacter.cpp IMateriaSource.cpp MateriaSource.cpp
+SRCS  = AMateria.cpp Character.cpp Cure.cpp Ice.cpp main.cpp   MateriaSource.cpp
 
 CC = c++
 
