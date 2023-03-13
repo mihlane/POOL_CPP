@@ -1,6 +1,6 @@
-NAME  = ex00
+NAME  = ex02
 
-SRCS  = 
+SRCS  = main.cpp
 
 CC = c++
 
