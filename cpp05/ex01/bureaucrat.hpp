@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:12:13 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 12:19:49 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 11:44:05 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,24 @@ private:
     std::string const name;
     int grade;
 public:
+    Bureaucrat();
     Bureaucrat(std::string name, int grade);
     ~Bureaucrat();
-    void signForm(Form const & f);
     Bureaucrat(Bureaucrat const & src);
+    Bureaucrat& operator=(const Bureaucrat& other);
+    void signForm(Form  & f);
     std::string getName(void) const;
     int getGrade(void) const;
     void    decrement(void);
     void    increment(void);
     class GradeTooHighException : public std::exception
     {
-        const char * what () const throw () {
-            return "Grade too high\n";
-        }
+        const char * what () const throw ();
     };
     class GradeTooLowException : public std::exception
     {
-        const char * what () const throw () {
-            return "Grade too low\n";
-        }
+        const char * what () const throw ();
     };
-    Bureaucrat& operator=(const Bureaucrat& other);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& other);

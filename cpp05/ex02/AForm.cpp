@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:22:10 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 15:09:19 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:31:10 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ AForm::AForm(std::string const & name, int gradeToSign, int gradeToExecute) : na
     if (gradeToExecute > 150)
         throw AForm::GradeTooLowException();
     this->isSigned = false;
+}
+
+const char *AForm::GradeTooHighException::GradeTooHighException::what() const throw()
+{
+   return"Grade too high\n";
+}
+
+const char *AForm::GradeTooLowException::GradeTooLowException::what() const throw()
+{
+    return ("Grade too low\n");
 }
 
 int AForm::getGradeToSign() const
@@ -70,66 +80,5 @@ AForm & AForm::operator=(AForm const & rhs)
 
 AForm::~AForm()
 {
+    // std::cout << "AForm destructor called" << std::endl;
 }
-// void    AForm::execute(Bureaucrat const & executor) const
-// {
-//     if (this->getIsSigned() == false)
-//         throw AForm::FormNotSignedException();
-//     if (executor.getGrade() > this->getGradeToExecute())
-//         throw AForm::GradeTooLowException();
-// }
-// voidAForm::execute(Bureaucrat const & executor) const
-// {
-//     if (this->getIsSigned() == false)
-//         throw AForm::FormNotSignedException();
-//     if (executor.getGrade() > this->getGradeToExecute())
-//         throw AForm::GradeTooLowException();
-// }
-
-// AForm::GradeTooHighException::GradeTooHighException()
-// {
-// }
-
-// AForm::GradeTooHighException::GradeTooHighException(GradeTooHighException const & src)
-// {
-//     *this = src;
-// }
-
-// AForm::GradeTooHighException & AForm::GradeTooHighException::operator=(GradeTooHighException const & rhs)
-// {
-//     (void)rhs;
-//     return *this;
-// }
-
-// AForm::GradeTooHighException::~GradeTooHighException() throw()
-// {
-// }
-
-// const char * AForm::GradeTooHighException::what() const throw()
-// {
-//     return "Grade too high";
-// }
-
-// AForm::GradeTooLowException::GradeTooLowException()
-// {
-// }
-
-// AForm::GradeTooLowException::GradeTooLowException(GradeTooLowException const & src)
-// {
-//     *this = src;
-// }
-
-// AForm::GradeTooLowException & AForm::GradeTooLowException::operator=(GradeTooLowException const & rhs)
-// {
-//     (void)rhs;
-//     return *this;
-// }
-
-// AForm::GradeTooLowException::~GradeTooLowException() throw()
-// {
-// }
-
-// const char * AForm::GradeTooLowException::what() const throw()
-// {
-//     return "Grade too low";
-// }

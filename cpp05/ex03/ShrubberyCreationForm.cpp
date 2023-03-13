@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:22:58 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 14:45:09 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:30:46 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
     std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
-
-
 std::string const & ShrubberyCreationForm::getTarget() const
 {
     return this->target;
@@ -40,37 +38,25 @@ std::string const & ShrubberyCreationForm::getTarget() const
 
 void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    if (this->getIsSigned() == false)
-        throw Bureaucrat::GradeTooHighException();
-    else if (executor.getGrade() > this->getGradeToExecute())
-        throw AForm::GradeTooLowException();
+    if (executor.getGrade() > this->getGradeToSign() || executor.getGrade() > this->getGradeToExecute())
+        throw (GradeTooLowException());
     else
     {
         std::ofstream file;
         file.open(this->getTarget() + "_shrubbery");
-        file << "         v" << std::endl;
-        file << "        >X<" << std::endl;
-        file << "         A" << std::endl;
-        file << "        d$b" << std::endl;
-        file << "      .d\\$$b." << std::endl;
-        file << "    .d$i$$\\$$b." << std::endl;
-        file << "   .d$$@b\\$$$ib." << std::endl;
-        file << "  .d$$i$$b\\$$$$b." << std::endl;
-        file << "  d$$@$$$i$$\\$$$b" << std::endl;
-        file << " :$$$$$i$$$@$b\\$$b" << std::endl;
-        file << " $$$i$$$$$@$b\\$$$i" << std::endl;
-        file << " $$@$i$$$$@@b\\$$@b" << std::endl;
-        file << " :$@$b$$$$@@b\\$@$i" << std::endl;
-        file << "  $@$b\\$$$@@@b\\$@$b" << std::endl;
-        file << "  :$@$b\\$@b\\$$$$@$i" << std::endl;
-        file << "   $$$b\\$$$$@$b\\$$b" << std::endl;
-        file << "   :$$$b\\$$$@$b\\$$$" << std::endl;
-        file << "    $$$b\\$@$b\\$$$i" << std::endl;
-        file << "    :$$$b\\$$$b\\$$$:" << std::endl;
-        file << "     $$$b\\$$$ib\\$$" << std::endl;
-        file << "     :$$$b\\$$$b\\$:" << std::endl;
-        file << "      $$$b\\$@$b\\$" << std::endl;
-        file << "      :$$$b\\$$$b:" << std::endl;
-        file << "       $$$:$$$" << std::endl;
+        file  << "       # #### ####"<< std::endl;
+        file  << "      ### //#|### |/###"<< std::endl;
+        file  << "     ##//#/ /||/##/_/##/_"<< std::endl;
+        file  << "    ###  //###|/ // # ##"<< std::endl;
+        file  << "   ##_/_#/_/## | #/###_/_###"<< std::endl;
+        file  << "  ## #### # / #| /  #### ##/#"<< std::endl;
+        file  << "   __#_--###`  |{,###---###-"<< std::endl;
+        file  << "             / }"<< std::endl;
+        file  << "              }}"<< std::endl;
+        file  << "              }}"<< std::endl;
+        file  << "         ejm  {{"<< std::endl;
+        file  << "        , -=-~{ .-^- "<< std::endl;
+        file  << "              `"<< std::endl;
+        file.close();
 }
 }

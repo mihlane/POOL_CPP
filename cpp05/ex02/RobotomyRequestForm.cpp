@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:24:42 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 21:49:21 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:58:45 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,11 @@ std::string const & RobotomyRequestForm::getTarget() const {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-    if (this->getIsSigned() == false && executor.getGrade() > this->getGradeToExecute()) {
+
+    if (executor.getGrade() > this->getGradeToSign() || executor.getGrade() > this->getGradeToExecute()) {
         throw (GradeTooLowException());
     }
+    srand(time(NULL));
     std::cout << "Brrrr \n";
     if (rand() % 2) {
         std::cout << target << " has been robotomized successfully \n";
@@ -46,5 +48,3 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
         std::cout << target << " has not been robotomized successfully \n";
     }
 }
-
-

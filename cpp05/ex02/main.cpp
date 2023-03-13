@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:12:17 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 22:50:11 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:48:29 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,38 @@
 
 int main(void)
 {
+    Bureaucrat B("dokkaebi", 2);
+    
+    // sign 25, exec 5
+    PresidentialPardonForm a("contrat");
+
+    // sign 145, exec 137
+    ShrubberyCreationForm b("contrat");
+
+    // sign 72, exec 45
+    RobotomyRequestForm c("contrat");
+    
     try
     {
-        Bureaucrat B("dokkaebi", 1);
-        PresidentialPardonForm a("contrat");
-        ShrubberyCreationForm b("contrat");
-        RobotomyRequestForm c("contrat");
-        b.beSigned(B);
-        B.signForm(b);
+        // b.beSigned(B);
+        // B.signForm(b);
         B.executeForm(b);
         // b.execute(B);
-        std::cout << "hahowa bda "<< std::endl;
+        
         a.beSigned(B);
-        B.signForm(a);
-         B.executeForm(a);
+        // B.signForm(a);
+        B.executeForm(a);
         // a.execute(B);
-        std::cout << "hahowa sala "<< std::endl;
+        
         c.beSigned(B);
         B.signForm(c);
         B.executeForm(c);
+        
         // c.execute(B);
         // std::cout << B << std::endl;
     }
-    catch(std::exception &e){
+    catch(std::exception &e)
+    {
         std::cout << e.what() << std::endl;
     };
 }

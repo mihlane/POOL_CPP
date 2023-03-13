@@ -6,12 +6,12 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 00:07:33 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/10 00:34:55 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:15:19 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
-#include    
+
 Serializer::Serializer()
 {
     std::cout << "Serializer constructor" << std::endl;
@@ -23,8 +23,6 @@ Serializer::Serializer(Serializer const & src)
     *this = src;
 }
 
-
-
 Serializer::~Serializer()
 {
     std::cout << "Serializer destructor" << std::endl;
@@ -33,10 +31,7 @@ Serializer::~Serializer()
 Serializer & Serializer::operator=(Serializer const & rhs)
 {
     std::cout << "Serializer assignation operator" << std::endl;
-    if (this != &rhs)
-    {
-        // make stuff
-    }
+    (void)rhs;
     return *this;
 }
 

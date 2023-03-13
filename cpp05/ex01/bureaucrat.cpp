@@ -6,20 +6,41 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:12:10 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 12:23:34 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:44:28 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bureaucrat.hpp"
 // #include "Form.hpp"
 
-
-void Bureaucrat::signForm(Form const &f)
+Bureaucrat::Bureaucrat() : name("unkown")
 {
-    if (f.getIsSigned() == true)
+    this->grade = 1;
+    std::cout << "Default constructor called\n";
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return "Grade is too high\n";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return "Grade is too low\n";
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+    try
+    {
+        f.beSigned(*this);
         std::cout << this->getName() << " signed " << f.getName() << std::endl;
-    else
+    }
+    catch(const std::exception& e)
+    {
         std::cout << this->getName() << " couldn’t sign " << f.getName() << " because " << f.getGradeToSign() << std::endl;
+        std::cerr << e.what() << '\n';
+    }
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const & src)
@@ -57,7 +78,7 @@ std::string Bureaucrat::getName() const
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
-        this->grade = other.getGrade();
+    this->grade = other.getGrade();
     return *this;
 }
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
@@ -71,13 +92,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
         this->grade = grade;
 }
 
-
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "destructor called\n";
 }
  std::ostream & operator<<(std::ostream & o, Bureaucrat const & rhs)
-    {
-    	o << rhs.getName() << " , " << rhs.getGrade();
-    	return o;
-    }
+{
+    o << rhs.getName() << " , " << rhs.getGrade();
+    return o;
+}

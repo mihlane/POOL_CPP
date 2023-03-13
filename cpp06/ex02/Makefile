@@ -1,6 +1,6 @@
 NAME  = ex00
 
-SRCS  = main.cpp Serializer.cpp
+SRCS  = 
 
 CC = c++
 

@@ -6,48 +6,29 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 00:05:52 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/10 00:40:50 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:19:05 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-using namespace std;
+#include "Serializer.hpp"
 
-// base class
-class Animal {
+int main(void)
+{
+    Serializer casting;
+    Data *ptr = new Data;
 
-   public:
-    void eat() {
-        cout << "I can eat!" << endl;
-    }
 
-    void sleep() {
-        cout << "I can sleep!" << endl;
-    }
-};
+    ptr->a  = 1337;
+    ptr->b  = "habibi";
+    std::cout << ptr->a << " " << ptr->b << "\n";
 
-// derived class
-class Dog : public Animal {
- 
-   public:
-    void bark() {
-        cout << "I can bark! Woof woof!!" << endl;
-    }
-    void sleep(){
-        std::cout << "htc\n";
-    }
-};
 
-int main() {
-    // Create object of the Dog class
-    Dog dog1;
 
-    // Calling members of the base class
-    dog1.eat();
-    dog1.sleep();
+    uintptr_t   uptr    = casting.serialize(ptr);
+    std::cout << uptr << " " << uptr << "\n";
+    Data        *dptr   = casting.deserialize(uptr);
 
-    // Calling member of the derived class
-    dog1.bark();
+    std::cout << dptr->a << " " << dptr->b << "\n";
 
-    return 0;
+    delete ptr;
 }

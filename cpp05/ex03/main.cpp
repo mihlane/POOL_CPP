@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:12:17 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/09 00:43:42 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 11:36:48 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,18 @@ int main()
     Intern someRandomIntern;
     AForm* rrf;
     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    delete rrf;
+
+    try
+    {
+        Intern Me;
+        AForm* rrf;
+        rrf = Me.makeForm("Unknown", "Bender");
+        delete rrf;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
 }

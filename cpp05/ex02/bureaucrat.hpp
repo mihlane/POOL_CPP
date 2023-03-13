@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:20:17 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 12:59:25 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/12 23:55:29 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,11 @@ class Bureaucrat
         void executeForm(AForm const & f);
         class GradeTooHighException : public std::exception
     {
-        const char * what () const throw () {
-            return "Grade too high\n";
-        }
+        const char * what () const throw ();
     };
     class GradeTooLowException : public std::exception
     {
-        const char * what () const throw () {
-            return "Grade too low\n";
-        }
+        const char * what () const throw ();
     };
 };
 

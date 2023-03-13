@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:21:48 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 15:14:41 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 11:35:06 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AForm
     public:
         AForm(std::string const & name, int gradeToSign, int gradeToExecute);
         AForm(AForm const & src);
-        ~AForm();
+        virtual ~AForm();
         AForm & operator=(AForm const & rhs);
         std::string const & getName() const;
         // void execute(Bureaucrat const & executor) const;

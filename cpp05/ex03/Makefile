@@ -1,4 +1,4 @@
-NAME  = Fixed
+NAME  = ex03
 
 SRCS  = main.cpp \
 AForm.cpp\

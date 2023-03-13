@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:12:17 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 12:25:37 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 14:47:20 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,16 @@ int main(void)
 
     try
     {
-        Bureaucrat A("Unknown",110);
+        Bureaucrat A;
         Form b("hola", 100, 110);
-        b.besigned(A);
+        b.beSigned(A);
+        std::cout << "******\n";
         A.signForm(b);
-        // for (size_t i = 0; i < 15; i++)
-        //     A.decrement();
+        std::cout << "******\n";
+        Bureaucrat D("Omar",101);
+        std::cout << "******\n";
+        D.signForm(b);
+        std::cout << "******\n"; 
     }
     catch(const std::exception& e)
     {

@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:21:48 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 15:14:41 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:08:44 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class AForm
         ~AForm();
         AForm & operator=(AForm const & rhs);
         std::string const & getName() const;
-        // void execute(Bureaucrat const & executor) const;
         bool getIsSigned() const;
         int getGradeToSign() const;
         int getGradeToExecute() const;
@@ -39,15 +38,11 @@ class AForm
         void setSigned(bool isSigned);
         class GradeTooHighException : public std::exception
     {
-        const char * what () const throw () {
-            return "Grade too high\n";
-        }
+        const char * what () const throw ();
     };
     class GradeTooLowException : public std::exception
     {
-        const char * what () const throw () {
-            return "Grade too low\n";
-        }
+        const char * what () const throw ();
     };
 };
 

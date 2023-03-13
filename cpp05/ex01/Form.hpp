@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 20:45:10 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 12:24:09 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 14:46:55 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,30 +29,27 @@ private:
     int const gradeToSign;
     int const gradeToExecute;
 public:
+    Form();
     Form(std::string name, int gradeToSign, int gradeToExecute);
     ~Form();
     Form(Form const & src);
     Form & operator=(Form const & rhs);
-    class GradeTooHighException : public std::exception
-    {
-        const char * what () const throw () {
-            return "Grade too high\n";
-        }
-    };
-    class GradeTooLowException : public std::exception
-    {
-        const char * what () const throw () {
-            return "Grade too low\n";
-        }
-    };
+    void    beSigned(Bureaucrat bureaucrat);
     void setSigned(bool isSigned);
     int getGradeToSign() const;
     bool getIsSigned() const;
     int getGradeToExecute() const;
     std::string getName() const;
-    void    besigned(Bureaucrat bureaucrat);
-    // void signForm(Bureaucrat &bureaucrat);
+    class GradeTooHighException : public std::exception
+    {
+        const char * what () const throw ();
+    };
+    class GradeTooLowException : public std::exception
+    {
+        const char * what () const throw ();
+    };
 };
+
 std::ostream& operator<<(std::ostream& out, const Form& form);
 
 #endif

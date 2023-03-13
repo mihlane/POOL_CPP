@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 11:21:07 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/08 12:39:49 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:44:56 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,16 @@
 
 void Bureaucrat::signForm(AForm &f)
 {
-    if (f.getIsSigned() == true)
+    try
+    {
+        f.beSigned(*this);
         std::cout << this->getName() << " signed " << f.getName() << std::endl;
-    else
+    }
+    catch(const std::exception& e)
+    {
         std::cout << this->getName() << " couldn’t sign " << f.getName() << " because " << f.getGradeToSign() << std::endl;
+        std::cerr << e.what() << '\n';
+    }
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
