@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:23:11 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/04/24 16:27:59 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/04/25 20:12:46 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,12 @@ public:
         void    shortestSpan();
         void    longestSpan();
         void    add_by_range();
-        Span& opertor=(const Span& sp);
+        Span& opertor=(const Span& s);
+        class GradeTooHighException : public std::exception
+        {
+        public:
+        const char * what () const throw ();
+        };
 };
 
 #endif
