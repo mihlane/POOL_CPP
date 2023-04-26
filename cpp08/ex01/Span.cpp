@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:23:03 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/04/25 20:16:56 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:44:56 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,18 @@ void    Span::addNumber(int N)
         this->storage.push_back(N);
     else
         throw Span::GradeTooHighException();
+}
+
+int    Span::shortestSpan()
+{
+    std::sort(storage.begin(), storage.end());
+    return (storage[1] - storage[0]);
+}
+
+int Span::longestSpan()
+{
+    std::sort(storage.begin(), storage.end());
+    return (storage[storage.size()] - storage[storage.size() - 1]);
 }
 
 const char * Span::GradeTooHighException::what() const throw()
