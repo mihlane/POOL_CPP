@@ -1,6 +1,7 @@
-NAME  = ex00
+NAME  = ex01
 
-SRCS  = main.cpp
+SRCS  = main.cpp\
+		Span.cpp
 
 CC = c++
 
