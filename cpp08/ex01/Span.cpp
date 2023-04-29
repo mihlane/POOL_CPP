@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:23:03 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/04/27 16:24:00 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/04/28 14:09:10 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Span::~Span()
     std::cout << "Span Destructor called\n";    
 }
 
-Span::Span(int N)
+Span::Span(unsigned int N)
 {
     this->N = N;
     this->storage.reserve(N);
@@ -45,6 +45,8 @@ void    Span::addNumber(int N)
 
 int    Span::shortestSpan()
 {
+    if (storage.size() < 2)
+        throw Span::GradeTooHighException();
     std::sort(storage.begin(), storage.end());
     int i = 10;
     std::vector<int>::iterator it;
@@ -54,7 +56,6 @@ int    Span::shortestSpan()
     i = *it2 - *it;
     while ( it2 != (storage.end()))
     {
-        std::cout << *it << " " << *it2 << std::endl;
         if (*it2 - *it < i)
             i =*it2 - *it;
         it++;
@@ -65,6 +66,8 @@ int    Span::shortestSpan()
 
 int Span::longestSpan()
 {
+    if (storage.size() < 2)
+        throw Span::GradeTooHighException();
     std::sort(storage.begin(), storage.end());
     return (storage[storage.size() - 1] - storage[0] );
 }
@@ -79,4 +82,11 @@ Span& Span::operator=(const Span& s)
     this->N = s.N;
     this->storage = s.storage;
     return (*this);
+}
+
+void    Span::add_by_range(std::vector<int>::iterator start, std::vector<int>::iterator end)
+{
+    if (this->storage.size() + std::distance(start, end) > this->N)
+        throw Span::GradeTooHighException();
+    this->storage.insert(this->storage.end(), start, end);
 }
