@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 14:12:17 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/04/28 16:49:42 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/05/01 16:03:37 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,19 @@
 #include <deque>
 
 
-class MutantStack : public std::stack<int>
+template <typename T>
+
+class MutantStack : public std::stack<T>
 {
-    
+    public:
+        MutantStack() : std::stack<T>() {};
+        MutantStack(MutantStack const &other) : std::stack<T>(other) {};
+        MutantStack &operator=(MutantStack const &other) { std::stack<T>::operator=(other); return (*this); };
+        virtual ~MutantStack() {};
+
+        typedef typename std::stack<T>::container_type::iterator iterator;
+        iterator begin() { return (std::stack<T>::c.begin()); };
+        iterator end() { return (std::stack<T>::c.end()); };
 };
 
 #endif
