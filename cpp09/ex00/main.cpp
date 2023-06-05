@@ -6,16 +6,28 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:21:38 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/05/15 15:06:36 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/05 22:03:03 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <map>
+// #include <iostream>
+// #include <string>
+// #include <fstream>
+// #include <sstream>
+// #include <map>
 
+// Function to split a string
+std::vector<std::string> splitString(const std::string& str, char delimiter) {
+    std::vector<std::string> tokens;
+    std::stringstream ss(str);
+    std::string token;
+    
+    while (std::getline(ss, token, delimiter)) {
+        tokens.push_back(token);
+    }
+    
+    return tokens;
+}
 int main(int ac, char **av)
 {
     if (ac != 2)
@@ -23,6 +35,8 @@ int main(int ac, char **av)
         std::cout << "Error: could not open file.\n";
         exit(0);
     }
+
+    
     std::map<std::string, double> data;
     std::string line;
     std::ifstream inputFile(av[1]);

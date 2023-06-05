@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:14:58 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/14 00:45:00 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/05/20 02:47:12 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void identify(Base &p)
     try
     {
         A &a = dynamic_cast<A &>(p);
+        (void)a;
         std::cout << "the type is A\n";
     }
     catch(const std::exception& e)
@@ -87,6 +88,7 @@ void identify(Base &p)
      try
     {
         C &c = dynamic_cast<C &>(p);
+        (void)c;
         std::cout << "the type is C\n";
     }
     catch(const std::exception& e)
@@ -96,6 +98,7 @@ void identify(Base &p)
  try
     {
         B &b = dynamic_cast<B &>(p);
+        (void)b;
         std::cout << "the type is B\n";
     }
     catch(const std::exception& e)
@@ -103,8 +106,6 @@ void identify(Base &p)
         std::cerr << e.what() << '\n';
     }
 
-    
-       
 }
 
 #endif
