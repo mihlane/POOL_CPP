@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 00:06:10 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/04/19 01:11:39 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/09 02:59:30 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,17 @@ struct  Data
     std::string b;
 };
 
+
 class Serializer
 {
-    public:
+    private:
         Serializer();
-        Serializer(Serializer const & src);
+    public:
+        Serializer(Serializer const& src);
+        Serializer& operator=(Serializer const& rhs);  
+        static uintptr_t serialize(Data* ptr);
+        static Data* deserialize(uintptr_t raw);
         ~Serializer();
-        Serializer & operator=(Serializer const & rhs);  
-        uintptr_t serialize(Data* ptr);
-        Data* deserialize(uintptr_t raw);
 };
 
 #endif

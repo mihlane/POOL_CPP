@@ -1,6 +1,7 @@
 NAME  = ex02
 
-SRCS  = main.cpp
+SRCS  = main.cpp\
+		classes.cpp\
 
 CC = c++
 
