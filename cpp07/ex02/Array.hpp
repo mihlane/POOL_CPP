@@ -6,14 +6,17 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:17:36 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/14 02:05:55 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/10 01:24:34 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
+#include <iostream>
+
 template <typename T>
+
 class Array
 {
     T *arr;
@@ -22,7 +25,7 @@ class Array
     Array()
     {
         s = 0;
-        arr = new T[s];
+        arr = new T;
     }
     Array(unsigned int n)
     {
@@ -32,8 +35,8 @@ class Array
     Array (const Array &a)
     {
         this->s = a.s;
-        this->arr = new T[s];
-        for (unsigned int i = 0; i < s; i++)
+        this->arr = new T[this->s];
+        for (unsigned int i = 0; i < this->s; i++)
                 this->arr[i] = a.arr[i];
     }
 
@@ -50,10 +53,19 @@ class Array
         return (*this);
     }
 
-    T &operator[](unsigned int i)
+    class WrongIndexing : public std::exception
     {
-        if (i >= s)
-            throw std::exception();
+        public:
+        const char * what () const throw ()
+        {
+            return "Wrong indexing\n";
+        }
+    };
+
+    T &operator[](int i)
+    {
+        if (i >= (int)s || i < 0)
+            throw WrongIndexing();
         return (arr[i]);
     }
 
@@ -66,8 +78,7 @@ class Array
     {
         delete [] arr;
     }
-    
-    
+     
 };
 
 

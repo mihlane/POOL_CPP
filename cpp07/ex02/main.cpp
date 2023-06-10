@@ -6,60 +6,58 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:17:19 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/14 02:09:02 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/10 01:24:15 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Array.hpp"
 
-#define MAX_VAL 750
-int main(int, char**)
+
+class Empty {
+	public:
+		int p;
+		Empty(){this->p = 3;}
+};
+
+int	main()
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
+	Array<int>	test(5);
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+	for (unsigned int i = 0; i < test.size(); i++)
+		test[i] = i;
+	for (unsigned int i = 0; i < test.size(); i++)
+		std::cout << test[i] << " ";
+	std::cout << std::endl;
+	std::cout << "Size of the Array is: " << test.size() << std::endl;
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
+	Array<char> test2(5);
+	for (unsigned int i = 0; i < test2.size(); i++)
+		test2[i] = 'z';
+	for (unsigned int i = 0; i < test2.size(); i++)
+		std::cout << test2[i] << " ";
+	std::cout << std::endl;
+	std::cout << "Size of the Array is: " << test2.size() << std::endl;
+	try {
+		std::cout << test[1] << std::endl;
+		// std::cout << test[6] << std::endl;
+	} catch (std::exception &excep)
+	{
+		std::cout << excep.what();
+	}
+	
+	Array<std::string> test3(3);
+	for (unsigned int i = 0; i < test3.size(); i++)
+		test3[i] = "HELLO";
+	for (unsigned int i = 0; i < test3.size(); i++)
+		std::cout << test3[i] << " ";
+	std::cout << std::endl;
+	std::cout << "Size of the Array is: " << test3.size() << std::endl;
+
+	Array<Empty> test4(2);
+	for (unsigned int i = 0; i < test4.size(); i++)
+		test4[i].p = 8;
+	for(unsigned int i = 0; i < test4.size(); i++)
+		std::cout << test4[i].p << " ";
+	std::cout << std::endl;
+	std::cout << "Size of the Array is: " << test4.size() << std::endl;
 }

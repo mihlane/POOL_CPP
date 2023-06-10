@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 01:05:05 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/14 01:16:10 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/10 01:14:07 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 template <typename T>
 
-void    my_printf(T t)
+void    print(T t)
 {
     std::cout << t << std::endl;
 }

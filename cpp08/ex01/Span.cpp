@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:23:03 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/04/28 14:09:10 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/10 05:05:31 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Span::~Span()
 
 Span::Span(unsigned int N)
 {
+    std::cout << "Span constructor called\n";
     this->N = N;
     this->storage.reserve(N);
 }

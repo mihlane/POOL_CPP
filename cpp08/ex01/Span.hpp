@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:23:11 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/04/28 14:04:32 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/10 05:00:04 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ private:
 public:
         // Span();
         Span(unsigned int N);
-        ~Span();
         Span(Span const &s);
+        Span& operator=(const Span& s);
+        ~Span();
         void    addNumber(int N);
         int    shortestSpan();
         int    longestSpan();
         void    add_by_range(std::vector<int>::iterator start, std::vector<int>::iterator end);
-        Span& operator=(const Span& s);
         class GradeTooHighException : public std::exception
         {
-        public:
-        const char * what () const throw ();
+                public:
+                const char * what () const throw ();
         };
 };
 

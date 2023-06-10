@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:51:38 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/14 01:03:59 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/09 22:20:20 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ template <typename T>
 
 T min(T x, T y)
 {
-    if (x > y)
-        return (y);
     if (x < y)
         return (x);
     return (y);
@@ -42,8 +40,6 @@ T max(T x, T y)
 {
     if (x > y)
         return (x);
-    if (x < y)
-        return (y);
     return (y);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 00:51:31 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/03/14 01:15:55 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/10 01:05:32 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int main()
 
     int ArrInt[] = {1,2,3,4,5};
 
-    iter(ArrInt, 2, my_printf<int>);
+    iter(ArrInt, 5, print<int>);
 
     std::string ArrStrrings[] = {"Who's", "Gonna", "Save", "The", "World"};
 
-    iter(ArrStrrings, sizeof(ArrStrrings)/sizeof(ArrStrrings[0]), my_printf<std::string>);
+    iter(ArrStrrings, sizeof(ArrStrrings)/sizeof(std::string), print<std::string>);
 
     double ArrDoub[] = {1.2,2.3,3.4,4.5,5.6};
 
-    iter(ArrDoub, 2, my_printf<double>);
+    iter(ArrDoub, 5, print<double>);
 }

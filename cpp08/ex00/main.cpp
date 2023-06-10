@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 21:06:07 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/04/17 15:53:09 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/10 01:43:16 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ int main()
     myVector.push_back(3);
     myVector.push_back(4);
     easyfind(myVector, 2);
+    myList.push_back(2);
+    myList.push_back(1);
+    myList.push_back(3);
+    myList.push_back(4);
+    easyfind(myList, 5);
     // print sorted vector
     // std::cout << std::endl; 
     return 0;

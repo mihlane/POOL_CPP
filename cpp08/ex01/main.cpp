@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 19:27:01 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/04/28 14:09:46 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/10 05:33:38 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main()
     sp.addNumber(17);
     sp.addNumber(9);
     sp.addNumber(11);
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    std::cout << "longest span  : " << sp.longestSpan() << std::endl;
+		std::cout << "shortest span : " << sp.shortestSpan() << std::endl;
     	try
 	{
 		Span span(50);
@@ -35,10 +35,11 @@ int main()
 	{
 		std::cout << exception.what();
 	}
+    std::cout << "helo\n";
 	try
     {
-        Span span(1);
-        span.addNumber(100);
+        Span span(100000);
+        span.addNumber(100000);
         std::vector <int> vect;
         vect.push_back(20);
         vect.push_back(30);
