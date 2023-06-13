@@ -6,17 +6,12 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:23:03 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/06/10 05:05:31 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/11 02:33:35 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-
-// Span::Span()
-// {
-//     std::cout << "Span Constructor called\n";    
-// }
 
 Span::~Span()
 {
@@ -41,13 +36,13 @@ void    Span::addNumber(int N)
     if (this->storage.size() < this->N)
         this->storage.push_back(N);
     else
-        throw Span::GradeTooHighException();
+        throw Span::Wrong_Size_Exception();
 }
 
 int    Span::shortestSpan()
 {
     if (storage.size() < 2)
-        throw Span::GradeTooHighException();
+        throw Span::Wrong_Size_Exception();
     std::sort(storage.begin(), storage.end());
     int i = 10;
     std::vector<int>::iterator it;
@@ -68,14 +63,14 @@ int    Span::shortestSpan()
 int Span::longestSpan()
 {
     if (storage.size() < 2)
-        throw Span::GradeTooHighException();
+        throw Span::Wrong_Size_Exception();
     std::sort(storage.begin(), storage.end());
     return (storage[storage.size() - 1] - storage[0] );
 }
 
-const char * Span::GradeTooHighException::what() const throw()
+const char * Span::Wrong_Size_Exception::what() const throw()
 {
-    return "Grade is too high\n";
+    return "Wrong Size Exception\n";
 }
 
 Span& Span::operator=(const Span& s)
@@ -85,9 +80,18 @@ Span& Span::operator=(const Span& s)
     return (*this);
 }
 
-void    Span::add_by_range(std::vector<int>::iterator start, std::vector<int>::iterator end)
+void    Span::add_by_range(unsigned int i, unsigned int j)
 {
-    if (this->storage.size() + std::distance(start, end) > this->N)
-        throw Span::GradeTooHighException();
-    this->storage.insert(this->storage.end(), start, end);
+    if (((j - i) + (unsigned int)storage.size()) > this->N)
+        throw Span::Wrong_Size_Exception();
+    std::vector<int> v;
+    while (i <= j)
+    {
+        v.push_back(i);
+        i++;
+    }
+    for (std::vector<int>::iterator it = v.begin(); it != v.end(); it++)
+    {
+        storage.push_back(*it);
+    }
 }

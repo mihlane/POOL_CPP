@@ -6,13 +6,14 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 14:11:31 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/05/04 18:01:12 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/12 22:22:38 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 #include <list>
-
+#include <map>
+#include <array>
 int main()
 {
     MutantStack<int> mstack;
@@ -43,6 +44,7 @@ int main()
     li.push_back(17);
     std::cout << li.back() << std::endl;
     li.pop_back();
+    std::cout << "size is : " << li.size() << std::endl;
     std::cout << li.size() << std::endl;
     li.push_back(3);
     li.push_back(5);

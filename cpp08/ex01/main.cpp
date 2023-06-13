@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 19:27:01 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/06/10 05:33:38 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/11 02:34:28 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,16 @@ int main()
 	{
 		std::cout << exception.what();
 	}
-    std::cout << "helo\n";
 	try
     {
-        Span span(100000);
-        span.addNumber(100000);
-        std::vector <int> vect;
-        vect.push_back(20);
-        vect.push_back(30);
-        vect.push_back(0);
-		vect.push_back(1);
-        span.add_by_range(vect.begin(), vect.end());
-        std::cout << "longest span  : " << span.longestSpan() << std::endl;
-        std::cout << "shortest span : " << span.shortestSpan() << std::endl;
+        Span span(100);
+        span.addNumber(10);
+        span.addNumber(10);
+        span.addNumber(10);
+        span.addNumber(10);
+        span.add_by_range(1, 100);
+        // std::cout << "longest span  : " << span.longestSpan() << std::endl;
+        // std::cout << "shortest span : " << span.shortestSpan() << std::endl;
     }
     catch (std::exception &exception)
     {
