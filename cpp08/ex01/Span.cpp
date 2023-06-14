@@ -6,7 +6,7 @@
 /*   By: mhabibi- <mhabibi-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:23:03 by mhabibi-          #+#    #+#             */
-/*   Updated: 2023/06/11 02:33:35 by mhabibi-         ###   ########.fr       */
+/*   Updated: 2023/06/14 01:23:43 by mhabibi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,27 @@ void    Span::add_by_range(unsigned int i, unsigned int j)
     {
         storage.push_back(*it);
     }
+}
+
+#include <iostream>
+#include <vector>
+#include <utility> // for std::pair
+
+int main() {
+    std::vector<int> numbers = {1, 2, 3, 4, 5, 6, 7, 8};
+
+    std::vector<std::pair<int, int>> pairs;
+    for (size_t i = 0; i < numbers.size(); i += 2) {
+        int first = numbers[i];
+        int second = (i + 1 < numbers.size()) ? numbers[i + 1] : 0;
+        pairs.push_back(std::make_pair(first, second));
+    }
+
+    // Print the pairs
+    for (const auto& pair : pairs) {
+        std::cout << "(" << pair.first << ", " << pair.second << ") ";
+    }
+    std::cout << std::endl;
+
+    return 0;
 }
